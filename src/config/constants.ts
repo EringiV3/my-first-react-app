@@ -1,3 +1,5 @@
-export const BASE_URI: string = 'https://eringiv3.microcms.io/api/v1';
-export const ARTICLES_PATH: string = `${BASE_URI}/articles`;
-export const API_KEY: string = '6e96a04e-e9af-46e0-ba55-8291b0b6eb8c';
+export const ENV: 'production' | 'test' | 'development' = process.env.NODE_ENV;
+export const CMS_BASE_URI: string =
+  process.env.REACT_APP_MICRO_CMS_BASE_URI || '';
+export const ARTICLES_PATH: string = `${CMS_BASE_URI}/articles`;
+export const API_KEY: string = process.env.REACT_APP_MICRO_CMS_API_KEY || '';
