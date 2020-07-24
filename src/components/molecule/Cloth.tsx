@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Article } from '../models/article';
+import { Article } from '../../models/article';
 
 type ClothProps = { article: Article };
 const Cloth: FC<ClothProps> = ({ article }) => {

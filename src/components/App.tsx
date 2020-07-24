@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import Clothes from './Clothes';
+import ClothList from './pages/ClothList';
+import Top from './pages/Top';
 
 // アプリケーションのルートコンポーネント
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/clothes" component={Clothes} />
+        <Route exact path="/" component={Top} />
+        <Route exact path="/clothes" component={ClothList} />
       </Switch>
     </Router>
   );

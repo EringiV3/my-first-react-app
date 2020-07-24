@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FC } from 'react';
-import { ARTICLES_PATH, API_KEY } from '../config/constants';
-import { Articles } from '../models/articles';
-import Cloth from './Cloth';
+import { ARTICLES_PATH, API_KEY } from '../../config/constants';
+import { Articles } from '../../models/articles';
+import Cloth from '../molecule/Cloth';
 
 // 服一覧コンポーネント
 const Clothes: FC = () => {
