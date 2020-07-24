@@ -1,7 +1,7 @@
 import React, { useEffect, useState, FC } from 'react';
 import { ARTICLES_PATH, API_KEY } from '../../config/constants';
 import { Articles } from '../../models/articles';
-import Cloth from '../molecule/Cloth';
+import ClothCard from '../molecule/ClothCard';
 
 // 服一覧コンポーネント
 const Clothes: FC = () => {
@@ -42,7 +42,7 @@ const Clothes: FC = () => {
     return (
       <ul>
         {articles.contents.map((article) => (
-          <Cloth key={article.id} article={article} />
+          <ClothCard key={article.id} article={article} />
         ))}
       </ul>
     );
