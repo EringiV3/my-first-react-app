@@ -6,3 +6,10 @@ export interface Articles {
   offset: number;
   limit: number;
 }
+
+export const initialArticles: Articles = {
+  contents: [],
+  totalCount: 0,
+  offset: 0,
+  limit: 0,
+};

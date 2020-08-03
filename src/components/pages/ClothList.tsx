@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../organisms/Header';
 import Footer from '../organisms/Footer';
-import Clothes from '../organisms/Clothes';
+import ClothSearchResults from '../templates/ClothSearchResults';
 
 const ClothList = () => {
   return (
     <>
       <Header />
-      <Clothes />
+      <ClothSearchResults />
       <Footer />
     </>
   );

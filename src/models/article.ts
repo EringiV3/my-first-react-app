@@ -15,3 +15,18 @@ export interface Article {
 export interface ImageUrl {
   url: string;
 }
+
+export const initialImageUrl: ImageUrl = { url: '' };
+export const initialArticle: Article = {
+  id: '',
+  createdAt: '',
+  updatedAt: '',
+  publishedAt: '',
+  name: '',
+  brand: '',
+  largeCategory: '',
+  smallCategory: '',
+  description: '',
+  imageUrlPc: initialImageUrl,
+  imageUrlSp: initialImageUrl,
+};
