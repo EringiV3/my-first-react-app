@@ -3,7 +3,8 @@ import Clothes from '../organisms/Clothes';
 import { ARTICLES_PATH, API_KEY } from '../../config/constants';
 import { Articles, initialArticles } from '../../models/articles';
 
-const ClothSearchResults: FC = () => {
+type clothSearchResultsProps = { searchWord: string };
+const ClothSearchResults: FC<clothSearchResultsProps> = ({ searchWord }) => {
   const [error, setError] = useState<{ message: string } | null>(null);
   const [isLoaded, setIsLoaded] = useState<Boolean>(false);
   const [articles, setArticles] = useState<Articles>(initialArticles);
@@ -76,7 +77,11 @@ const ClothSearchResults: FC = () => {
           ))}
         </select>
         {/* propsで絞り込みのパラメータを与える */}
-        <Clothes largeCategory={largeCategory} smallCategory={smallCategory} />
+        <Clothes
+          largeCategory={largeCategory}
+          smallCategory={smallCategory}
+          searchWord={searchWord}
+        />
       </>
     );
   }

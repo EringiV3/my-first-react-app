@@ -39,7 +39,6 @@ const Cloth: FC<ClothProps> = ({ id }) => {
         <div>largeCategory: {article.largeCategory}</div>
         <div>smallCategory: {article.smallCategory}</div>
         <div>brand: {article.brand}</div>
-        <div>brand: {article.brand}</div>
         <div>description: {article.description}</div>
         <img src={article.imageUrlPc.url} alt="" />
       </>

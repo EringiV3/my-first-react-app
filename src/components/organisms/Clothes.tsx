@@ -4,13 +4,22 @@ import { Articles, initialArticles } from '../../models/articles';
 import ClothCard from '../molecule/ClothCard';
 
 // 服一覧コンポーネント
-type clothesProps = { largeCategory: string; smallCategory: string };
-const Clothes: FC<clothesProps> = ({ largeCategory, smallCategory }) => {
+type clothesProps = {
+  largeCategory: string;
+  smallCategory: string;
+  searchWord: string;
+};
+const Clothes: FC<clothesProps> = ({
+  largeCategory,
+  smallCategory,
+  searchWord,
+}) => {
   const [error, setError] = useState<{ message: string } | null>(null);
   const [isLoaded, setIsLoaded] = useState<Boolean>(false);
   const [articles, setArticles] = useState<Articles>(initialArticles);
 
   const buildQuery = (): string => {
+    if (searchWord !== '') return `q=${searchWord}`;
     let query: string =
       largeCategory !== ''
         ? `filters=largeCategory[equals]${largeCategory}`
@@ -38,8 +47,7 @@ const Clothes: FC<clothesProps> = ({ largeCategory, smallCategory }) => {
           console.log({ error }, typeof error);
         }
       );
-    // eslint-disable-next-line
-  }, [largeCategory, smallCategory]);
+  }, [largeCategory, smallCategory, searchWord]);
 
   if (error) {
     return <div>Error: {error.message}</div>;
