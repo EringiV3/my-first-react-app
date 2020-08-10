@@ -18,20 +18,20 @@ const Clothes: FC<clothesProps> = ({
   const [isLoaded, setIsLoaded] = useState<Boolean>(false);
   const [articles, setArticles] = useState<Articles>(initialArticles);
 
-  const buildQuery = (): string => {
-    if (searchWord !== '') return `q=${searchWord}`;
-    let query: string =
-      largeCategory !== ''
-        ? `filters=largeCategory[equals]${largeCategory}`
-        : '';
-    query +=
-      smallCategory !== '' ? `[and]smallCategory[equals]${smallCategory}` : '';
-    return query;
-  };
-
   useEffect(() => {
-    const query = buildQuery();
-    fetch(`${ARTICLES_PATH}?${query}`, {
+    const buildQuery = (): string => {
+      if (searchWord !== '') return `q=${searchWord}`;
+      let query: string =
+        largeCategory !== ''
+          ? `filters=largeCategory[equals]${largeCategory}`
+          : '';
+      query +=
+        smallCategory !== ''
+          ? `[and]smallCategory[equals]${smallCategory}`
+          : '';
+      return query;
+    };
+    fetch(`${ARTICLES_PATH}?${buildQuery()}`, {
       headers: { 'X-API-KEY': API_KEY },
     })
       .then((res) => res.json())
